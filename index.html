@@ -5,12 +5,15 @@
     <base href="/" />
     <link href="./favicon.ico" rel="icon" />
     <title>CDSD: Computer & Data Science Club</title>
+
+    <!-- SEO & Social -->
     <meta
       name="description"
       property="og:description"
       content="CDSD is a club at George Mason University Korea where students passionate about computer science and data science come together to share knowledge and grow."
     />
     <meta name="url" property="og:url" content="https://cdsd.masonkorea.edu/" />
+    <link rel="canonical" href="https://cdsd.masonkorea.edu/" />
     <meta
       name="image"
       property="og:image"
@@ -19,6 +22,18 @@
     <meta property="og:site_name" content="cdsd.masonkorea.edu" />
     <meta property="og:title" content="CDSD: Computer & Data Science Club" />
     <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CDSD: Computer & Data Science Club" />
+    <meta
+      name="twitter:description"
+      content="CDSD is a club at GMU Korea where CS & DS students share knowledge and grow."
+    />
+    <meta
+      name="twitter:image"
+      content="https://cdsd.masonkorea.edu/assets/og-image.jpg"
+    />
+
+    <!-- Viewport & PWA -->
     <meta
       content="width=device-width, initial-scale=1, viewport-fit=cover"
       name="viewport"
@@ -37,12 +52,16 @@
     />
     <link href="./logo192.png" rel="apple-touch-icon" />
     <link href="./manifest.json" rel="manifest" />
+
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Pretendard -->
     <link
       rel="preload"
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
@@ -53,6 +72,8 @@
       rel="stylesheet"
       crossorigin
     />
+
+    <!-- Font Awesome -->
     <link
       rel="preload"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -64,225 +85,400 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!-- CSS 파일 로드 -->
+
+    <!-- LCP 개선 -->
+    <link
+      rel="preconnect"
+      href="https://d101vc9winf8ln.cloudfront.net"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="https://d101vc9winf8ln.cloudfront.net/article_images/14853/original/_%EC%82%AC%EC%A7%84%EC%A7%80%EB%A3%8C__%ED%95%9C%EA%B5%AD%EC%A1%B0%EC%A7%80%EB%A9%94%EC%9D%B4%EC%8A%A8%EB%8C%80%ED%95%99%EA%B5%90_%EC%A0%84%EA%B2%BD.jpg?1598515855"
+    />
+
+    <!-- CSS -->
     <link href="/assets/css/index.css" rel="stylesheet" />
   </head>
   <body>
+    <a href="#main" class="skip-link">Skip to content</a>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+
     <div id="root">
-      <!-- 내비게이션 바 -->
-      <nav>
-        <div class="logo"><a href="index.html">CDSD</a></div>
-        <div class="hamburger"><i class="fas fa-bars"></i></div>
-        <ul class="nav-links">
-          <li>
-            <a href="#about-us">About Us</a>
-            <div class="nav-sub-links" data-for="about-us">
-              <div class="nav-sub-item"><p>Introduction</p></div>
-              <div class="nav-sub-item"><p>Organization</p></div>
+      <!-- ===== NAV ===== -->
+      <nav aria-label="Primary">
+        <div class="nav-inner">
+          <div class="logo"><a href="#hero">CDSD</a></div>
+
+          <button
+            class="hamburger"
+            aria-label="Open menu"
+            aria-controls="primary-nav"
+            aria-expanded="false"
+          >
+            <i class="fas fa-bars" aria-hidden="true"></i>
+          </button>
+
+          <ul id="primary-nav" class="nav-links">
+            <li><a href="#about-us">About Us</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#timeline">Timeline</a></li>
+            <li><a href="#recruit">Recruitment</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- 🔻 전역 드롭다운(mega) : 상단 메뉴의 가로 위치/폭과 정확히 정렬 -->
+        <div class="nav-mega" aria-label="Secondary">
+          <div class="mega-grid">
+            <div class="mega-col">
+              <p class="mega-title">About Us</p>
+              <a href="#about-us-introduction">Introduction</a>
+              <a href="#about-us-organization">Organization</a>
             </div>
-          </li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#timeline">Timeline</a></li>
-          <li>
-            <a href="#recruit">Recruitment</a>
-            <div class="nav-sub-links" data-for="recruit">
-              <div class="nav-sub-item"><p>Apply</p></div>
+
+            <div class="mega-col">
+              <p class="mega-title">Projects</p>
+              <a href="#projects-ongoing">Ongoing</a>
+              <a href="#projects-completed">Completed</a>
             </div>
-          </li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+
+            <div class="mega-col">
+              <p class="mega-title">Timeline</p>
+              <a href="#timeline">Schedule</a>
+              <a href="#timeline">Past Events</a>
+            </div>
+
+            <div class="mega-col">
+              <p class="mega-title">Recruitment</p>
+              <a href="#recruit">Overview</a>
+              <a
+                href="https://cdsd.masonkorea.edu/apply"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Apply</a
+              >
+            </div>
+
+            <div class="mega-col">
+              <p class="mega-title">Contact</p>
+              <a href="#contact">Contact Section</a>
+              <a href="mailto:club@example.com">Email</a>
+              <a
+                href="https://www.instagram.com/mk_cds_delegation"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Instagram</a
+              >
+              <a
+                href="https://discord.gg/yourinvitecode"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Discord</a
+              >
+              <a
+                href="https://youtube.com/yourchannel"
+                target="_blank"
+                rel="noopener noreferrer"
+                >YouTube</a
+              >
+            </div>
+          </div>
+        </div>
       </nav>
 
-      <!-- 히어로 섹션 -->
-      <div class="hero" id="hero">
-        <h1 id="typing-text">Welcome to CDSD</h1>
+      <!-- ===== HERO ===== -->
+      <div class="hero" id="hero" role="banner">
+        <h1 id="typing-text" class="typing">Welcome to CDSD</h1>
         <p>Start at George Mason University Korea</p>
       </div>
 
-      <!-- About Us 섹션 -->
-      <div class="section" id="about-us">
-        <h2>About Us</h2>
-        <div class="subsection" id="about-us-introduction">
-          <h3>Introduction</h3>
+      <!-- ===== MAIN ===== -->
+      <main id="main">
+        <!-- About Us -->
+        <section class="section" id="about-us" aria-label="About Us">
+          <h2>About Us</h2>
+          <div class="subsection" id="about-us-introduction">
+            <h3>Introduction</h3>
+            <p>
+              CDSD is a club based at George Mason University Korea, where
+              students passionate about computer science and data science come
+              together to share knowledge, collaborate on projects, and grow
+              together.
+            </p>
+          </div>
+          <div class="subsection" id="about-us-organization">
+            <h3>Organization</h3>
+            <p>Meet the leadership team driving CDSD's mission.</p>
+
+            <div class="cards">
+              <div class="card" tabindex="0" aria-label="President: Taejoon Oh">
+                <img
+                  src="images/president.jpg"
+                  alt="Portrait of President Taejoon Oh"
+                  loading="lazy"
+                  width="600"
+                  height="360"
+                />
+                <div class="card-content">
+                  <h3>President</h3>
+                  <p>Taejoon Oh — Leading the club's vision and strategy.</p>
+                </div>
+              </div>
+
+              <div
+                class="card"
+                tabindex="0"
+                aria-label="Vice President: Jiwon Jung"
+              >
+                <img
+                  src="images/vice_president.jpg"
+                  alt="Portrait of Vice President Jiwon Jung"
+                  loading="lazy"
+                  width="600"
+                  height="360"
+                />
+                <div class="card-content">
+                  <h3>Vice President</h3>
+                  <p>Jiwon Jung — Supporting leadership and operations.</p>
+                </div>
+              </div>
+
+              <div class="card" tabindex="0" aria-label="Event Head">
+                <img
+                  src="images/event_head.jpg"
+                  alt="Photo representing Event Head"
+                  loading="lazy"
+                  width="600"
+                  height="360"
+                />
+                <div class="card-content">
+                  <h3>Event Head</h3>
+                  <p>Organizing workshops, hackathons, and events.</p>
+                </div>
+              </div>
+
+              <div
+                class="card"
+                tabindex="0"
+                aria-label="Finance Head: Seoyoung Yoon"
+              >
+                <img
+                  src="images/finance_head.jpg"
+                  alt="Photo representing Finance Head"
+                  loading="lazy"
+                  width="600"
+                  height="360"
+                />
+                <div class="card-content">
+                  <h3>Finance Head</h3>
+                  <p>
+                    Seoyoung Yoon — Managing the club's budget and resources.
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="card"
+                tabindex="0"
+                aria-label="Learning and Development Head"
+              >
+                <img
+                  src="images/lnd_head.jpg"
+                  alt="Photo representing Learning & Development Head"
+                  loading="lazy"
+                  width="600"
+                  height="360"
+                />
+                <div class="card-content">
+                  <h3>L&D Head</h3>
+                  <p>Leading learning and development initiatives.</p>
+                </div>
+              </div>
+
+              <div class="card" tabindex="0" aria-label="Security Head">
+                <img
+                  src="images/security_head.jpg"
+                  alt="Photo representing Security Head"
+                  loading="lazy"
+                  width="600"
+                  height="360"
+                />
+                <div class="card-content">
+                  <h3>Security Head</h3>
+                  <p>Ensuring data and system security for projects.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="section" id="projects" aria-label="Projects">
+          <h2>Projects</h2>
+          <p>Explore the innovative projects developed by CDSD members.</p>
+
+          <div class="subsection" id="projects-ongoing">
+            <h3>Ongoing Projects</h3>
+            <div class="cards">
+              <div
+                class="card"
+                tabindex="0"
+                aria-label="Machine Learning Dashboard project"
+              >
+                <img
+                  src="images/project1.jpg"
+                  alt="Screenshot representing Machine Learning Dashboard"
+                  loading="lazy"
+                  width="600"
+                  height="360"
+                />
+                <div class="card-content">
+                  <h3>Machine Learning Dashboard</h3>
+                  <p>
+                    A web-based dashboard for visualizing real-time data
+                    analysis.
+                  </p>
+                </div>
+              </div>
+              <div class="card" tabindex="0" aria-label="AI Chatbot project">
+                <img
+                  src="images/project2.jpg"
+                  alt="Screenshot representing AI Chatbot"
+                  loading="lazy"
+                  width="600"
+                  height="360"
+                />
+                <div class="card-content">
+                  <h3>AI Chatbot</h3>
+                  <p>An intelligent chatbot for campus assistance using NLP.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection" id="projects-completed">
+            <h3>Completed Projects</h3>
+            <div class="cards">
+              <div
+                class="card"
+                tabindex="0"
+                aria-label="Blockchain Voting System project"
+              >
+                <img
+                  src="images/project3.jpg"
+                  alt="Screenshot representing Blockchain Voting System"
+                  loading="lazy"
+                  width="600"
+                  height="360"
+                />
+                <div class="card-content">
+                  <h3>Blockchain Voting System</h3>
+                  <p>A secure voting platform using blockchain technology.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Timeline -->
+        <section class="section" id="timeline" aria-label="Timeline">
+          <h2>Timeline</h2>
+          <p>Check out CDSD's planned activities for the Fall 2025 semester.</p>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <span>2025.09</span>
+              <h3>Fall Recruitment Kickoff</h3>
+              <p>
+                Launch of the Fall 2025 recruitment campaign to welcome new
+                members.
+              </p>
+            </div>
+            <div class="timeline-item">
+              <span>2025.10</span>
+              <h3>Intro to Python Workshop</h3>
+              <p>A beginner-friendly workshop to learn Python programming.</p>
+            </div>
+            <div class="timeline-item">
+              <span>2025.11</span>
+              <h3>Data Science Hackathon</h3>
+              <p>
+                A hackathon focused on data analysis and machine learning
+                projects.
+              </p>
+            </div>
+            <div class="timeline-item">
+              <span>2025.12</span>
+              <h3>Year-End Tech Showcase</h3>
+              <p>Showcasing member projects and celebrating achievements.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Recruitment -->
+        <section class="section" id="recruit" aria-label="Recruitment">
+          <h2>Recruitment</h2>
           <p>
-            CDSD is a club based at George Mason University Korea, where
-            students passionate about computer science and data science come
-            together to share knowledge, collaborate on projects, and grow
-            together.
+            Fall semester recruitment is coming soon. Please check our official
+            announcements for detailed information.
           </p>
-        </div>
-        <div class="subsection" id="about-us-organization">
-          <h3>Organization</h3>
-          <p>Meet the leadership team driving CDSD's mission.</p>
-          <div class="cards">
-            <div class="card">
-              <img src="images/president.jpg" alt="President" loading="lazy" />
-              <div class="card-content">
-                <h3>President</h3>
-                <p>Saebom Park - Leading the club's vision and strategy.</p>
-              </div>
-            </div>
-            <div class="card">
-              <img
-                src="images/vice_president.jpg"
-                alt="Vice President"
-                loading="lazy"
-              />
-              <div class="card-content">
-                <h3>Vice President</h3>
-                <p>Taejun Ha - Supporting leadership and operations.</p>
-              </div>
-            </div>
-            <div class="card">
-              <img
-                src="images/event_head.jpg"
-                alt="Event Head"
-                loading="lazy"
-              />
-              <div class="card-content">
-                <h3>Event Head</h3>
-                <p>Organizing workshops, hackathons, and events.</p>
-              </div>
-            </div>
-            <div class="card">
-              <img
-                src="images/finance_head.jpg"
-                alt="Finance Head"
-                loading="lazy"
-              />
-              <div class="card-content">
-                <h3>Finance Head</h3>
-                <p>Managing the club's budget and resources.</p>
-              </div>
-            </div>
-            <div class="card">
-              <img src="images/lnd_head.jpg" alt="L&D Head" loading="lazy" />
-              <div class="card-content">
-                <h3>L&D Head</h3>
-                <p>Leading learning and development initiatives.</p>
-              </div>
-            </div>
-            <div class="card">
-              <img
-                src="images/security_head.jpg"
-                alt="Security Head"
-                loading="lazy"
-              />
-              <div class="card-content">
-                <h3>Security Head</h3>
-                <p>Ensuring data and system security for projects.</p>
-              </div>
-            </div>
+          <div>
+            <a
+              href="https://cdsd.masonkorea.edu/apply"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="cta-button"
+              >Apply Now</a
+            >
           </div>
-        </div>
-      </div>
+        </section>
 
-      <!-- Projects 섹션 -->
-      <div class="section" id="projects">
-        <h2>Projects</h2>
-        <p>Explore the innovative projects developed by CDSD members.</p>
-        <div class="subsection" id="projects-ongoing">
-          <h3>Ongoing Projects</h3>
-          <div class="cards">
-            <div class="card">
-              <img src="images/project1.jpg" alt="Project 1" loading="lazy" />
-              <div class="card-content">
-                <h3>Machine Learning Dashboard</h3>
-                <p>
-                  A web-based dashboard for visualizing real-time data analysis.
-                </p>
-              </div>
-            </div>
-            <div class="card">
-              <img src="images/project2.jpg" alt="Project 2" loading="lazy" />
-              <div class="card-content">
-                <h3>AI Chatbot</h3>
-                <p>An intelligent chatbot for campus assistance using NLP.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="subsection" id="projects-completed">
-          <h3>Completed Projects</h3>
-          <div class="cards">
-            <div class="card">
-              <img src="images/project3.jpg" alt="Project 3" loading="lazy" />
-              <div class="card-content">
-                <h3>Blockchain Voting System</h3>
-                <p>A secure voting platform using blockchain technology.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        <!-- Contact -->
+        <section class="section" id="contact" aria-label="Contact">
+          <h2>Contact</h2>
+          <p>
+            For inquiries or collaboration opportunities, please reach out
+            through the official channels.
+          </p>
+        </section>
+      </main>
 
-      <!-- Timeline 섹션 -->
-      <div class="section" id="timeline">
-        <h2>Timeline</h2>
-        <p>Check out CDSD's planned activities for the Fall 2025 semester.</p>
-        <div class="timeline">
-          <div class="timeline-item">
-            <span>2025.09</span>
-            <h3>Fall Recruitment Kickoff</h3>
-            <p>
-              Launch of the Fall 2025 recruitment campaign to welcome new
-              members.
-            </p>
-          </div>
-          <div class="timeline-item">
-            <span>2025.10</span>
-            <h3>Intro to Python Workshop</h3>
-            <p>A beginner-friendly workshop to learn Python programming.</p>
-          </div>
-          <div class="timeline-item">
-            <span>2025.11</span>
-            <h3>Data Science Hackathon</h3>
-            <p>
-              A hackathon focused on data analysis and machine learning
-              projects.
-            </p>
-          </div>
-          <div class="timeline-item">
-            <span>2025.12</span>
-            <h3>Year-End Tech Showcase</h3>
-            <p>Showcasing member projects and celebrating achievements.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Recruitment 섹션 -->
-      <div class="section" id="recruit">
-        <h2>Recruitment</h2>
-        <p>
-          Fall semester recruitment is coming soon. Please check our official
-          announcements for detailed information.
-        </p>
-        <div>
-          <a
-            href="https://cdsd.masonkorea.edu/apply"
-            target="_blank"
-            class="cta-button"
-            >Apply Now</a
-          >
-        </div>
-      </div>
-
-      <!-- Contact 섹션 -->
-      <div class="section" id="contact">
-        <h2>Contact</h2>
-        <p>
-          For inquiries or collaboration opportunities, please reach out through
-          the official channels.
-        </p>
-      </div>
-
-      <!-- 푸터 섹션 -->
+      <!-- ===== FOOTER ===== -->
       <footer>
         <div class="container">
           <div class="top">
             <p>Copyright © CDSD All Rights Reserved.</p>
-            <div></div>
+            <div class="social-icons">
+              <a
+                href="https://www.instagram.com/mk_cds_delegation"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
+                <i class="fab fa-instagram" aria-hidden="true"></i>
+              </a>
+              <a href="mailto:toh4@gmu.edu" aria-label="Email">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+              </a>
+              <a
+                href="https://discord.gg/yourinvitecode"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Discord"
+              >
+                <i class="fab fa-discord" aria-hidden="true"></i>
+              </a>
+              <a
+                href="https://youtube.com/yourchannel"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+              >
+                <i class="fab fa-youtube" aria-hidden="true"></i>
+              </a>
+            </div>
           </div>
           <hr />
           <div class="bottom">
@@ -298,15 +494,16 @@
             </div>
             <div class="right">
               <p style="font-weight: bold">President</p>
-              <p>Saebom Park 010-9454-0836</p>
+              <p>Taejoon Oh <a href="tel:+821098145027">010-9814-5027</a></p>
               <p style="font-weight: bold">Vice President</p>
-              <p>Taejun Ha 010-4775-7419</p>
+              <p>Jiwon Jung <a href="tel:+821048206401">010-4820-6401</a></p>
             </div>
           </div>
         </div>
       </footer>
     </div>
-    <!-- JS 파일 로드 -->
+
+    <!-- JS -->
     <script defer src="/assets/js/index.js"></script>
   </body>
 </html>
