@@ -121,70 +121,44 @@
           </button>
 
           <ul id="primary-nav" class="nav-links">
-            <li><a href="#about-us">About Us</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#timeline">Timeline</a></li>
-            <li><a href="#recruit">Recruitment</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li>
+              <a href="#about-us">About Us</a>
+              <div class="dropdown" aria-label="About Us submenu">
+                <p class="dropdown-title">About Us</p>
+                <a href="#about-us-introduction">Introduction</a>
+                <a href="#about-us-organization">Organization</a>
+              </div>
+            </li>
+            <li>
+              <a href="#projects">Projects</a>
+              <div class="dropdown" aria-label="Projects submenu">
+                <p class="dropdown-title">Projects</p>
+                <a href="#projects-ongoing">Ongoing</a>
+                <a href="#projects-completed">Completed</a>
+              </div>
+            </li>
+            <li>
+              <a href="#timeline">Timeline</a>
+              <div class="dropdown" aria-label="Timeline submenu">
+                <p class="dropdown-title">Timeline</p>
+                <a href="#timeline">Schedule</a>
+                <a href="#timeline">Past Events</a>
+              </div>
+            </li>
+            <li>
+              <a href="#recruit">Recruitment</a>
+              <div class="dropdown" aria-label="Recruitment submenu">
+                <p class="dropdown-title">Recruitment</p>
+                <a href="#recruit">Overview</a>
+                <a
+                  href="https://cdsd.masonkorea.edu/apply"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Apply</a
+                >
+              </div>
+            </li>
           </ul>
-        </div>
-
-        <!-- 🔻 전역 드롭다운(mega) : 상단 메뉴의 가로 위치/폭과 정확히 정렬 -->
-        <div class="nav-mega" aria-label="Secondary">
-          <div class="mega-grid">
-            <div class="mega-col">
-              <p class="mega-title">About Us</p>
-              <a href="#about-us-introduction">Introduction</a>
-              <a href="#about-us-organization">Organization</a>
-            </div>
-
-            <div class="mega-col">
-              <p class="mega-title">Projects</p>
-              <a href="#projects-ongoing">Ongoing</a>
-              <a href="#projects-completed">Completed</a>
-            </div>
-
-            <div class="mega-col">
-              <p class="mega-title">Timeline</p>
-              <a href="#timeline">Schedule</a>
-              <a href="#timeline">Past Events</a>
-            </div>
-
-            <div class="mega-col">
-              <p class="mega-title">Recruitment</p>
-              <a href="#recruit">Overview</a>
-              <a
-                href="https://cdsd.masonkorea.edu/apply"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Apply</a
-              >
-            </div>
-
-            <div class="mega-col">
-              <p class="mega-title">Contact</p>
-              <a href="#contact">Contact Section</a>
-              <a href="mailto:club@example.com">Email</a>
-              <a
-                href="https://www.instagram.com/mk_cds_delegation"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Instagram</a
-              >
-              <a
-                href="https://discord.gg/yourinvitecode"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Discord</a
-              >
-              <a
-                href="https://youtube.com/yourchannel"
-                target="_blank"
-                rel="noopener noreferrer"
-                >YouTube</a
-              >
-            </div>
-          </div>
         </div>
       </nav>
 
@@ -434,15 +408,6 @@
             >
           </div>
         </section>
-
-        <!-- Contact -->
-        <section class="section" id="contact" aria-label="Contact">
-          <h2>Contact</h2>
-          <p>
-            For inquiries or collaboration opportunities, please reach out
-            through the official channels.
-          </p>
-        </section>
       </main>
 
       <!-- ===== FOOTER ===== -->
@@ -466,7 +431,6 @@
               >
                 <i class="fas fa-envelope" aria-hidden="true"></i>
               </a>
-
               <a
                 href="https://discord.gg/yourinvitecode"
                 target="_blank"

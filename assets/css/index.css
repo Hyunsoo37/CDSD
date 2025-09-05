@@ -1,4 +1,4 @@
-/* ===== Vars ===== */
+/* ===== 변수 정의 ===== */
 :root {
   --primary: #66aaff;
   --secondary: #5588cc;
@@ -11,7 +11,7 @@
   --sep: rgba(255, 255, 255, 0.13);
 }
 
-/* ===== Base ===== */
+/* ===== 기본 스타일 ===== */
 html {
   scroll-behavior: smooth;
 }
@@ -44,7 +44,7 @@ body {
   top: 10px;
 }
 
-/* ===== NAV (fixed) ===== */
+/* ===== 네비게이션 (고정) ===== */
 nav {
   position: fixed;
   inset: 0 0 auto 0;
@@ -71,7 +71,7 @@ nav {
   text-decoration: none;
 }
 
-/* hamburger */
+/* 햄버거 메뉴 */
 .hamburger {
   display: none;
   justify-self: end;
@@ -83,7 +83,7 @@ nav {
   border-radius: 6px;
 }
 
-/* top links (right aligned) */
+/* 상단 링크 (우측 정렬) */
 .nav-links {
   list-style: none;
   margin: 0;
@@ -91,6 +91,9 @@ nav {
   display: flex;
   gap: 28px;
   justify-self: end;
+}
+.nav-links li {
+  position: relative;
 }
 .nav-links a {
   color: #fff;
@@ -104,65 +107,42 @@ nav {
   color: var(--primary);
 }
 
-/* ===== Global dropdown (KUCC 느낌: nav 전체 아래) ===== */
-.nav-mega {
+/* ===== 개별 드롭다운: 각 메뉴 항목 아래에 표시 ===== */
+.dropdown {
   position: absolute;
-  left: 0;
   top: 100%;
-  width: 100%;
+  left: 0;
+  width: 200px;
   display: none;
   background: var(--mega-bg);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  padding: 14px 18px;
+  z-index: 1000;
 }
-nav:hover .nav-mega,
-nav:focus-within .nav-mega {
+.nav-links li:hover .dropdown,
+.nav-links li:focus-within .dropdown {
   display: block;
 }
-
-/* 내부 폭/패딩은 nav와 동일, 그리드는 '로고 자리 + 메뉴 5칸' */
-.nav-mega .mega-grid {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 14px 5vw 16px 5vw;
-  display: grid;
-  gap: 0;
-  align-items: flex-start;
-  grid-template-columns: 1fr repeat(5, minmax(160px, 1fr));
-}
-
-/* 첫 컬럼은 로고 아래: 비워두기(구분선 제거) */
-.mega-col {
-  padding: 8px 18px;
-  box-sizing: border-box;
-  border-left: 1px solid var(--sep);
-}
-.mega-col:first-child {
-  border-left: none;
-  padding: 0;
-  min-height: 0;
-}
-.mega-title {
+.dropdown-title {
   margin: 0 0 8px 0;
   font-weight: 800;
   font-size: 14px;
   opacity: 0.95;
 }
-
-/* 링크: 기본은 옅은 회색, 호버는 흰색 */
-.nav-mega a {
+.dropdown a {
   color: var(--muted);
   text-decoration: none;
   font-size: 14px;
   line-height: 1.4;
-  display: inline-block;
+  display: block;
   padding: 4px 0;
 }
-.nav-mega a:hover {
+.dropdown a:hover {
   color: #fff;
 }
 
-/* ===== Hero ===== */
+/* ===== 히어로 섹션 ===== */
 .hero {
   height: 100vh;
   background: url("https://d101vc9winf8ln.cloudfront.net/article_images/14853/original/_%EC%82%AC%EC%A7%84%EC%A7%80%EB%A3%8C__%ED%95%9C%EA%B5%AD%EC%A1%B0%EC%A7%80%EB%A9%94%EC%9D%B4%EC%8A%A8%EB%8C%80%ED%95%99%EA%B5%90_%EC%A0%84%EA%B2%BD.jpg?1598515855")
@@ -201,7 +181,7 @@ nav:focus-within .nav-mega {
   font-size: 16px;
 }
 
-/* ===== Sections / reveal ===== */
+/* ===== 섹션 및 하위 섹션 / 드러내기 효과 ===== */
 .section,
 .subsection {
   max-width: 1200px;
@@ -235,7 +215,7 @@ nav:focus-within .nav-mega {
   margin: 0 0 10px;
 }
 
-/* cards */
+/* 카드 스타일 */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -281,7 +261,7 @@ nav:focus-within .nav-mega {
   font-size: 13px;
 }
 
-/* cta */
+/* CTA 버튼 */
 .cta-button {
   display: inline-block;
   min-width: 100px;
@@ -300,7 +280,7 @@ nav:focus-within .nav-mega {
   transform: translateY(1px);
 }
 
-/* timeline */
+/* 타임라인 */
 .timeline {
   position: relative;
   padding: 15px 0;
@@ -345,7 +325,7 @@ nav:focus-within .nav-mega {
   font-size: 13px;
 }
 
-/* footer */
+/* 푸터 */
 footer {
   background: #21513b;
   color: #fff;
@@ -386,7 +366,7 @@ footer hr {
   background: #fff;
   margin: 20px 0;
 }
-/* 파란 링크색 제거 */
+/* 푸터 링크의 기본 파란색 제거 */
 footer a {
   color: inherit;
   text-decoration: none;
@@ -406,8 +386,9 @@ footer .bottom .right {
   text-align: center;
 }
 
-/* ===== Responsive ===== */
+/* ===== 반응형 디자인 ===== */
 @media (max-width: 430px) {
+  /* 네비게이션 */
   .nav-inner {
     padding: 18px 3vw;
   }
@@ -428,34 +409,19 @@ footer .bottom .right {
   .nav-links.active {
     display: flex;
   }
-
-  /* 모바일: 전역 드롭다운은 메뉴 열릴 때 스택 */
-  .nav-mega {
+  /* 모바일: 드롭다운 메뉴를 세로로 스택 */
+  .dropdown {
     position: static;
-    left: auto;
-    top: auto;
     width: 100%;
     display: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: none;
-  }
-  nav.menu-open .nav-mega {
-    display: block;
-  }
-  .nav-mega .mega-grid {
-    grid-template-columns: 1fr;
-    gap: 0;
-    padding: 10px 3vw;
-  }
-  .mega-col {
-    border-left: none;
-    border-bottom: 1px solid var(--sep);
     padding: 10px 0;
   }
-  .mega-col:first-child {
-    display: none;
-  } /* 로고칸은 숨김 */
-
+  .nav-links li.active .dropdown {
+    display: block;
+  }
+  /* 히어로 */
   .hero {
     min-height: 60vh;
     padding: 100px 0 80px;
@@ -468,7 +434,7 @@ footer .bottom .right {
     font-size: 14px;
     padding: 0 15px;
   }
-
+  /* 섹션 */
   .section,
   .subsection {
     padding: 40px 15px;
@@ -479,35 +445,40 @@ footer .bottom .right {
   .subsection h3 {
     font-size: 20px;
   }
-
+  /* 카드 */
   .cards {
     grid-template-columns: 1fr;
   }
   .card img {
     height: 150px;
   }
-
+  /* 푸터 */
   footer {
     padding: 20px 3vw;
   }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
+  /* 네비게이션 */
   .hamburger {
     display: none;
   }
   .nav-links {
     display: flex;
   }
+  /* 히어로 */
   .hero h1 {
     font-size: 40px;
   }
+  /* 섹션 */
   .section h2 {
     font-size: 26px;
   }
+  /* 카드 */
   .cards {
     grid-template-columns: repeat(2, 1fr);
   }
+  /* 푸터 */
   footer .bottom {
     grid-template-columns: 1.5fr 1fr;
   }
@@ -520,6 +491,7 @@ footer .bottom .right {
 }
 
 @media (min-width: 1025px) {
+  /* 네비게이션 */
   .nav-inner {
     padding: 20px 5vw;
   }
@@ -529,6 +501,7 @@ footer .bottom .right {
   .hamburger {
     display: none;
   }
+  /* 히어로 */
   .hero {
     padding: 80px 0 60px;
   }
@@ -540,6 +513,7 @@ footer .bottom .right {
     font-size: 20px;
     padding: 0 10%;
   }
+  /* 섹션 */
   .section {
     padding: 80px 30px;
     min-height: 70vh;
@@ -547,6 +521,7 @@ footer .bottom .right {
   .section h2 {
     font-size: 36px;
   }
+  /* 카드 */
   .cards {
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
@@ -554,6 +529,7 @@ footer .bottom .right {
   .card img {
     height: 200px;
   }
+  /* 푸터 */
   footer .bottom {
     grid-template-columns: 1.5fr 1fr;
   }
