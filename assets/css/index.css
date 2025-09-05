@@ -7,8 +7,6 @@
   --text: #eee;
   --muted: #ccc;
   --nav-bg: rgba(0, 0, 0, 0.65);
-  --mega-bg: #000;
-  --sep: rgba(255, 255, 255, 0.13);
 }
 
 /* ===== 기본 스타일 ===== */
@@ -92,9 +90,6 @@ nav {
   gap: 28px;
   justify-self: end;
 }
-.nav-links li {
-  position: relative;
-}
 .nav-links a {
   color: #fff;
   text-decoration: none;
@@ -105,41 +100,6 @@ nav {
 }
 .nav-links a:hover {
   color: var(--primary);
-}
-
-/* ===== 개별 드롭다운: 각 메뉴 항목 아래에 표시 ===== */
-.dropdown {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 200px;
-  display: none;
-  background: var(--mega-bg);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-  padding: 14px 18px;
-  z-index: 1000;
-}
-.nav-links li:hover .dropdown,
-.nav-links li:focus-within .dropdown {
-  display: block;
-}
-.dropdown-title {
-  margin: 0 0 8px 0;
-  font-weight: 800;
-  font-size: 14px;
-  opacity: 0.95;
-}
-.dropdown a {
-  color: var(--muted);
-  text-decoration: none;
-  font-size: 14px;
-  line-height: 1.4;
-  display: block;
-  padding: 4px 0;
-}
-.dropdown a:hover {
-  color: #fff;
 }
 
 /* ===== 히어로 섹션 ===== */
@@ -408,18 +368,6 @@ footer .bottom .right {
   }
   .nav-links.active {
     display: flex;
-  }
-  /* 모바일: 드롭다운 메뉴를 세로로 스택 */
-  .dropdown {
-    position: static;
-    width: 100%;
-    display: none;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: none;
-    padding: 10px 0;
-  }
-  .nav-links li.active .dropdown {
-    display: block;
   }
   /* 히어로 */
   .hero {

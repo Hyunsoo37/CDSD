@@ -36,9 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
   function closeMenu() {
     if (!nav || !links || !burger) return;
     links.classList.remove("active");
-    links.querySelectorAll(".dropdown").forEach((dropdown) => {
-      dropdown.style.display = "none";
-    });
     burger.setAttribute("aria-expanded", "false");
     document.body.style.overflow = "";
   }
@@ -50,30 +47,8 @@ document.addEventListener("DOMContentLoaded", () => {
       document.body.style.overflow = opened ? "hidden" : "";
     });
 
-    /* 모바일: 드롭다운 메뉴 토글 */
-    links.querySelectorAll("li").forEach((li) => {
-      const link = li.querySelector("a");
-      const dropdown = li.querySelector(".dropdown");
-      if (link && dropdown) {
-        link.addEventListener("click", (e) => {
-          if (window.innerWidth <= 430) {
-            e.preventDefault();
-            const isActive = li.classList.toggle("active");
-            dropdown.style.display = isActive ? "block" : "none";
-            links.querySelectorAll("li").forEach((otherLi) => {
-              if (otherLi !== li) {
-                otherLi.classList.remove("active");
-                const otherDropdown = otherLi.querySelector(".dropdown");
-                if (otherDropdown) otherDropdown.style.display = "none";
-              }
-            });
-          }
-        });
-      }
-    });
-
     links
-      .querySelectorAll(".dropdown a")
+      .querySelectorAll("a")
       .forEach((a) => a.addEventListener("click", closeMenu));
     document.addEventListener("click", (e) => {
       if (!nav.contains(e.target) && links.classList.contains("active"))
@@ -83,13 +58,4 @@ document.addEventListener("DOMContentLoaded", () => {
       if (e.key === "Escape") closeMenu();
     });
   }
-
-  /* 드롭다운 메뉴: 단어 단위로 세로 줄바꿈 */
-  document.querySelectorAll(".dropdown a").forEach((a) => {
-    const t = a.textContent.trim().replace(/\s+/g, " ");
-    if (!a.dataset.verticalized) {
-      a.innerHTML = t.split(" ").join("<br>");
-      a.dataset.verticalized = "1";
-    }
-  });
 });
